@@ -1,0 +1,150 @@
+{
+ "fetched": "2026-11-13",
+ "labels": {
+  "macos-14": {
+   "arch": "x64",
+   "image": "macOS 14",
+   "os": "darwin",
+   "version": null
+  },
+  "macos-15": {
+   "arch": "arm64",
+   "image": "macOS 15 Arm64",
+   "os": "darwin",
+   "version": null
+  },
+  "macos-15-intel": {
+   "arch": "x64",
+   "image": "macOS 15",
+   "os": "darwin",
+   "version": null
+  },
+  "macos-15-large": {
+   "arch": "x64",
+   "image": "macOS 15",
+   "os": "darwin",
+   "version": null
+  },
+  "macos-15-xlarge": {
+   "arch": "arm64",
+   "image": "macOS 15 Arm64",
+   "os": "darwin",
+   "version": null
+  },
+  "macos-26": {
+   "arch": "arm64",
+   "image": "macOS 26 Arm64",
+   "os": "darwin",
+   "version": null
+  },
+  "macos-26-intel": {
+   "arch": "x64",
+   "image": "macOS 26",
+   "os": "darwin",
+   "version": null
+  },
+  "macos-26-large": {
+   "arch": "x64",
+   "image": "macOS 26",
+   "os": "darwin",
+   "version": null
+  },
+  "macos-26-xlarge": {
+   "arch": "arm64",
+   "image": "macOS 26 Arm64",
+   "os": "darwin",
+   "version": null
+  },
+  "macos-latest": {
+   "arch": "arm64",
+   "image": "macOS 26 Arm64",
+   "os": "darwin",
+   "version": null
+  },
+  "macos-latest-large": {
+   "arch": "x64",
+   "image": "macOS 26",
+   "os": "darwin",
+   "version": null
+  },
+  "ubuntu-22.04": {
+   "arch": "x64",
+   "image": "Ubuntu 22.04",
+   "os": "linux",
+   "version": "22.04"
+  },
+  "ubuntu-22.04-arm": {
+   "arch": "arm64",
+   "image": "Ubuntu 22.04 Arm64",
+   "os": "linux",
+   "version": "22.04"
+  },
+  "ubuntu-24.04": {
+   "arch": "x64",
+   "image": "Ubuntu 24.04",
+   "os": "linux",
+   "version": "24.04"
+  },
+  "ubuntu-24.04-arm": {
+   "arch": "arm64",
+   "image": "Ubuntu 24.04 Arm64",
+   "os": "linux",
+   "version": "24.04"
+  },
+  "ubuntu-26.04": {
+   "arch": "x64",
+   "image": "Ubuntu 26.04",
+   "os": "linux",
+   "version": "26.04"
+  },
+  "ubuntu-26.04-arm": {
+   "arch": "arm64",
+   "image": "Ubuntu 26.04 Arm64",
+   "os": "linux",
+   "version": "26.04"
+  },
+  "ubuntu-latest": {
+   "arch": "x64",
+   "image": "Ubuntu 24.04",
+   "os": "linux",
+   "version": "24.04"
+  },
+  "windows-11-arm": {
+   "arch": "arm64",
+   "image": "Windows 11 Arm64 with Visual Studio 2026",
+   "os": "win32",
+   "version": null
+  },
+  "windows-11-vs2026-arm": {
+   "arch": "arm64",
+   "image": "Windows 11 Arm64 with Visual Studio 2026",
+   "os": "win32",
+   "version": null
+  },
+  "windows-2022": {
+   "arch": "x64",
+   "image": "Windows Server 2022",
+   "os": "win32",
+   "version": null
+  },
+  "windows-2025": {
+   "arch": "x64",
+   "image": "Windows Server 2025",
+   "os": "win32",
+   "version": null
+  },
+  "windows-2025-vs2026": {
+   "arch": "x64",
+   "image": "Windows Server 2025",
+   "os": "win32",
+   "version": null
+  },
+  "windows-latest": {
+   "arch": "x64",
+   "image": "Windows Server 2025",
+   "os": "win32",
+   "version": null
+  }
+ },
+ "source": "https://raw.githubusercontent.com/actions/runner-images/main/README.md"
+}
