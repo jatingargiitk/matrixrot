@@ -1,0 +1,47 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -e . pytest
+      - run: pytest -q
+
+  self-check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install .
+      - name: This repo's own workflows pass with live data
+        run: matrixrot --refresh --strict
+      - name: The example workflow is flagged
+        run: |
+          cd examples
+          set +e
+          matrixrot
+          code=$?
+          set -e
+          test "$code" = 1
+
+  action:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./
+        with:
+          refresh: "true"
+          strict: "true"

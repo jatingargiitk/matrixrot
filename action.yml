@@ -1,0 +1,31 @@
+name: matrixrot
+description: Fail when a setup-python version in your workflows can't install on the runner it targets.
+branding:
+  icon: alert-triangle
+  color: orange
+inputs:
+  paths:
+    description: Workflow files or directories to check (space separated).
+    default: .github/workflows
+  refresh:
+    description: Fetch the latest Python manifest and runner labels before checking.
+    default: "true"
+  strict:
+    description: Fail on warnings (like a version missing from the newest ubuntu image) too.
+    default: "false"
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: python3 -m pip install --quiet "${{ github.action_path }}"
+    - shell: bash
+      env:
+        MR_PATHS: ${{ inputs.paths }}
+        MR_REFRESH: ${{ inputs.refresh }}
+        MR_STRICT: ${{ inputs.strict }}
+      run: |
+        args=()
+        [ "$MR_REFRESH" = "true" ] && args+=(--refresh)
+        [ "$MR_STRICT" = "true" ] && args+=(--strict)
+        # shellcheck disable=SC2086
+        python3 -m matrixrot "${args[@]}" $MR_PATHS
