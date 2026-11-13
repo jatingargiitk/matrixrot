@@ -15,7 +15,7 @@ matrixrot expands every job's `strategy.matrix` (including `include` and `exclud
 
 ## What it catches
 
-- **A version with no build for the image.** For example `3.9` on `ubuntu-26.04`, or `3.8` on arm64 macOS if the manifest has no arm64 build for it. The fix line says which labels do have it and which versions the runner has.
+- **A version with no build for the image.** For example `3.9` on `ubuntu-26.04`, or `3.7` on `macos-latest`, which is arm64 (the manifest only has x64 macOS builds of 3.7). The fix line says which labels do have it and which versions the runner has.
 - **A version that only works until `-latest` moves.** `ubuntu-latest` is listed as Ubuntu 24.04 in the runner-images README, but `-latest` labels migrate gradually, so some runs already land on the newest image. This is a warning (use `--strict` to fail on it).
 - **Unquoted versions YAML turns into numbers.** `python-version: 3.10` is read as `3.1`.
 - It understands `architecture` (for example x86 on Windows), `allow-prereleases`, `-dev` versions, free-threaded `3.13t` builds, and multi-line `python-version` lists.
@@ -45,7 +45,7 @@ Exit codes: `0` clean, `1` errors (or warnings with `--strict`), `2` a path does
 
 ## Example
 
-[`examples/.github/workflows/ci.yml`](examples/.github/workflows/ci.yml) has a 3x4 matrix plus a lint job. Running `matrixrot` in `examples/` prints:
+[`examples/.github/workflows/ci.yml`](examples/.github/workflows/ci.yml) has an os by python matrix plus a lint job. Running `matrixrot` in `examples/` prints:
 
 ```
 .github/workflows/ci.yml:9  ERROR  job test
